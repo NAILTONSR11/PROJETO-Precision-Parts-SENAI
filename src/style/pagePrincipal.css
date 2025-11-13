@@ -1,74 +1,294 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
-/* font-family: "Inter", sans-serif; */
+:root {
+    /* ========== NOVA PALETA AZUL (BASEADA NO NOVO LOGO) ========== */
+    --azul-escuro: #1E3A8A;
+    --azul-principal: #3B82F6;
+    --azul-claro: #DBEAFE;
+    --cinza-escuro: #374151;
+    --cinza-medio: #6B7280;
+    --cinza-claro: #E5E7EB;
+    --fundo: #F8FAFC;
 
+    /* ========== CARDS ========== */
+    --card1: #FFFFFF;
+    --card2: #DCFCE7;
+    --card3: #FEE2E2;
+    --card4: #F0F7FF;
+
+    /* ========== STATUS ========== */
+    --status-aprovado-bg: #DCFCE7;
+    --status-aprovado-text: #166534;
+
+    --status-reprovado-bg: #FEE2E2;
+    --status-reprovado-text: #991B1B;
+
+    /* ========== BOTÕES ========== */
+    --botao: var(--azul-principal);
+    --botao-hover: var(--azul-escuro);
+    --botao-texto: #FFFFFF;
+
+    /* ========== TEXTOS ========== */
+    --titulo: var(--azul-escuro);
+    --texto: var(--cinza-escuro);
+    --texto-sec: var(--cinza-medio);
+
+    /* ========== BORDAS ========== */
+    --borda: var(--cinza-claro);
+    --borda-clara: #F3F4F6;
+}
+
+/* ===================== RESET ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
 }
-body{
-    background-color: #F9FAFB;
+
+body {
+    background-color: var(--fundo);
 }
 
-header{
-    background-color: #FEFEFE;
-    padding-left: 235px;
-    height: 53px;
-    width: 100%;
+/* ===================== MENU LATERAL ===================== */
+#menu_lateral {
+    position: fixed;
+    background-color: var(--azul-escuro);
+    color: white;
+    padding: 18px;
+    height: 100vh;
+    width: 220px;
+}
+
+#menu_lateral h3 {
+    font-size: 11px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+#menu_lateral nav li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#menu_lateral nav li:hover {
+    opacity: 0.8;
+}
+
+#menu_lateral nav li img {
+    width: 18px;
+    margin-right: 10px;
+}
+
+/* ===================== HEADER ===================== */
+header {
+    background-color: #FFFFFF;
+    padding-left: 230px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.LOGO-TT {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.LOGO-TT .logo img {
+    width: 30px;
+}
+
+.LOGO-TT h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--titulo);
+}
+
+.LOGO-TT p {
+    font-size: 10px;
+    color: var(--texto-sec);
+}
+
+/* ===================== MAIN ===================== */
+main {
+    margin-left: 14vw;
+    padding: 28px;
+}
+
+/* ===================== DASHBOARD ===================== */
+#primeiraParte h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: var(--titulo);
+}
+
+#primeiraParte span {
+    font-size: 13px;
+    color: var(--texto-sec);
+}
+
+.cards {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.card {
+    background: #FFFFFF;
+    padding: 18px;
+    border-radius: 8px;
+    color: var(--texto);
+    border: 1px solid var(--borda);
+}
+
+.card h3 {
+    font-size: 14px;
+    color: var(--titulo);
+}
+
+.card span {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+/* Cards */
+.card1 { background-color: var(--card1); }
+.card2 { background-color: var(--card2); }
+.card3 { background-color: var(--card3); }
+.card4 { background-color: var(--card4); }
+
+/* ===================== LISTA DE RELATÓRIOS===================== */
+#listaProdutos {
+    margin-top: 30px;
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.pesquisa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controles {
     display: flex;
     align-items: center;
     gap: 10px;
-
-        & .LOGO-TT{
-            display: flex;
-            gap: 7px;
-            & .logo{
-                width: 28px;
-        
-                & img{
-                    width: 100%;
-                }
-            }
-        
-            & h2{
-                font-size: 13.8px;
-                font-weight: 300;
-            }
-        
-            & p{
-                font-size: 9px;
-                font-weight: 200;
-            }
-        }
 }
 
-#menu_lateral{
-    position: absolute;
-    background-color: #1C2430;
-    color: #788088;
-    margin: 0;
-    padding: 15px;
-    float: left;
-    height: 100%;
-    width: 219px;
+.controles input {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--borda);
+}
 
-    & h3{
-        font-size: 9px;
-        font-weight: bold;
-        padding-bottom: 10px;
-    }
+.controles img {
+    width: 3vw;
+}
 
-    & nav{
+#addProduto {
+    background: var(--botao);
+    color: var(--botao-texto);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
-        & li{
-            list-style: none;
-            padding-bottom: 15px;
-            
-            & img{
-                padding-right: 10px;
-            }
-        }
-    }
+#addProduto:hover {
+    background-color: var(--botao-hover);
+}
+
+/* ===================== TABELA ===================== */
+#relatoriosApi {
+    margin-top: 20px;
+    background: #FFFFFF;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.cabecalho-relatorios h3 {
+    font-size: 16px;
+    color: var(--titulo);
+}
+
+.cabecalho-relatorios span {
+    font-size: 13px;
+    color: var(--texto-sec);
+}
+
+.tabelaRelatorios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabelaRelatorios th {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--texto-sec);
+    text-align: left;
+    padding: 10px 6px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.tabelaRelatorios td {
+    padding: 10px 6px;
+    border-bottom: 1px solid var(--borda-clara);
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.tabelaRelatorios img{
+    width: 1.5vw;
+    padding: 5px;
+    background-color: #115aec;
+    border-radius: 4px;
+}
+
+.tabelaRelatorios img:hover{
+    cursor: pointer;
+    background-color: #115aecdf;
+}
+
+/* ===================== STATUS ===================== */
+.status {
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 9999px;
+}
+
+.status.aprovado {
+    background-color: var(--status-aprovado-bg);
+    color: var(--status-aprovado-text);
+}
+
+.status.reprovado {
+    background-color: var(--status-reprovado-bg);
+    color: var(--status-reprovado-text);
+}
+
+/* ===================== AÇÕES ===================== */
+.acoes button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acoes button:hover {
+    opacity: 0.6;
 }
