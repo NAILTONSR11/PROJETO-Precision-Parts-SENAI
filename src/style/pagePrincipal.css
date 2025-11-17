@@ -95,6 +95,10 @@ header {
     border-bottom: 1px solid var(--borda);
 }
 
+#toggleMenu{
+    cursor: pointer;
+}
+
 .LOGO-TT {
     display: flex;
     gap: 8px;
@@ -122,7 +126,6 @@ main {
     padding: 28px;
 }
 
-/* ===================== DASHBOARD ===================== */
 #primeiraParte h1 {
     font-size: 22px;
     margin-bottom: 4px;
@@ -167,7 +170,7 @@ main {
 .card3 { background-color: var(--card3); }
 .card4 { background-color: var(--card4); }
 
-/* ===================== LISTA DE RELATÓRIOS===================== */
+/* =========== RELATÓRIOS ============ */
 #listaProdutos {
     margin-top: 30px;
     background: white;
@@ -211,7 +214,7 @@ main {
     background-color: var(--botao-hover);
 }
 
-/* ===================== TABELA ===================== */
+/* =================== TABELA =================== */
 #relatoriosApi {
     margin-top: 20px;
     background: #FFFFFF;
@@ -280,15 +283,118 @@ main {
     color: var(--status-reprovado-text);
 }
 
-/* ===================== AÇÕES ===================== */
-.acoes button {
-    background: transparent;
+/* ===== MENU ENCOLHIDO ===== */
+
+#menu_lateral.mini {
+    width: 70px;
+    transition: 0.3s;
+}
+
+#menu_lateral.mini h3 {
+    display: none;
+}
+
+#menu_lateral.mini nav li span {
+    display: none;
+}
+
+#menu_lateral.mini nav li {
+    justify-content: center;
+}
+
+#menu_lateral.mini nav li img {
+    margin: 0;
+}
+
+/* ======================= MODAL ======================= */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;                       
+    background: rgba(0,0,0,0.45);
+    z-index: 900;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CAIXA DO MODAL */
+.modal-content {
+    background: #fff;
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--borda);
+    box-shadow: 0 6px 18px #00000026;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.25s ease;
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 18px;
+    color: var(--titulo);
+    margin-bottom: 6px;
+}
+
+/* LABEL E CAMPOS */
+.modal-content label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--texto);
+}
+
+.modal-content input,
+.modal-content select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--borda);
+    font-size: 14px;
+    background: var(--fundo);
+}
+
+/* BOTÕES */
+.modal-content button {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 15px;
     border: none;
-    font-size: 16px;
+    font-size:  16px; 
     cursor: pointer;
     transition: 0.2s;
 }
 
-.acoes button:hover {
-    opacity: 0.6;
+#salvarRelatorio {
+    background: var(--botao);
+    color: var(--botao-texto);
+}
+
+.fechar {
+    background: var(--cinza-claro);
+    color: var(--cinza-escuro);
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+    main {
+        margin-left: 5vw;
+        padding: 14px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        padding-left: 90px;
+    }
+
+    .tabelaRelatorios {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+}
 }

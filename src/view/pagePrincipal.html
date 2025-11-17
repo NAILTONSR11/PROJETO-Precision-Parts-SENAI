@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style/pagePrincipal.css">
     <title>Precision Parts Ltda</title>
-    
+    <link rel="stylesheet" href="../style/pagePrincipal.css">
+    <script src="../script/script.js" defer></script>
 </head>
 <body>
+    
+    <!-- MENU LATERAL -->
     <aside id="menu_lateral">
         <h3>MENU PRINCIPAL</h3>
         <nav>
-            <li><img src="/src/assets/images/DASH.png" alt="">Dashboard</li>
-            <li><img src="/src/assets/images/NOVO.png" alt="">Cadastrar Relatório</li>
-            <li><img src="/src/assets/images/RELATO.png" alt="">Relatórios</li>
-            <li><img src="/src/assets/images/CONFIG.png" alt="">Configurações</li>
+            <li><img src="/src/assets/images/DASH.png"><span>Dashboard</span></li>
+            <li id="btnCadastrarRelatorio"><img src="/src/assets/images/NOVO.png"><span>Cadastrar Relatório</span></li>
+            <li><img src="/src/assets/images/RELATO.png"><span>Relatórios</span></li>
+            <li><img src="/src/assets/images/CONFIG.png"><span>Configurações</span></li>
+
         </nav>
     </aside>
     
+    <!-- HEADER -->
     <header>
         <div class="logo-menu">
-            <img src="/src/assets/images/CLOSE-MENU.png" alt="Fechar Menu">
+            <img id="toggleMenu" src="/src/assets/images/CLOSE-MENU.png" alt="Fechar Menu">
         </div>
 
         <div class="LOGO-TT">
@@ -34,6 +39,7 @@
         </div>
     </header>
     
+    <!-- MAIN -->
     <main>
 
         <section id="primeiraParte">
@@ -67,7 +73,7 @@
             </div>
         </section>
 
-        <!----------------- ESSA É A API ------------------>
+        <!-- LISTA RELATÓRIOS -->
         <section id="listaProdutos">
             <div class="pesquisa">
                 <h2>Lista de Relatórios</h2>
@@ -75,12 +81,9 @@
                 <div class="controles">
                     <input type="text" placeholder="Buscar...">
                     <img src="/src/assets/images/filtro.png" alt="Filtro">
-                    <button id="addProduto">+ Novo Relatório</button>
                 </div>
             </div>
 
-
-            <!-- como vai ficar a api -->
             <div id="relatoriosApi">
                 <div class="cabecalho-relatorios">
                     <h3>Relatórios de Inspeção</h3>
@@ -107,8 +110,8 @@
                             <td>—</td>
                             <td>12/11/2025</td>
                             <td class="acoes">
-                                <button id="editar">✏️</button>
-                                <button  id="excluir">🗑️</button>
+                                <button>✏️</button>
+                                <button>🗑️</button>
                             </td>
                         </tr>
 
@@ -119,38 +122,37 @@
                             <td>Falha na dimensão</td>
                             <td>12/11/2025</td>
                             <td class="acoes">
-                                <button  id="editar">✏️</button>
-                                <button  id="excluir">🗑️</button>
+                                <button>✏️</button>
+                                <button>🗑️</button>
                             </td>
                         </tr>
 
-                        <tr>
-                            <td><img src="/src/assets/images/RELATO.png" alt=""></td>
-                            <td>Ana Santos</td>
-                            <td><span class="status aprovado">Aprovado</span></td>
-                            <td>—</td>
-                            <td>13/11/2025</td>
-                            <td>
-                                <button  id="editar">✏️</button>
-                                <button  id="excluir">🗑️</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><img src="/src/assets/images/RELATO.png" alt=""></td>
-                            <td>Paulo Lima</td>
-                            <td><span class="status reprovado">Reprovado</span></td>
-                            <td>Risco na superfície</td>
-                            <td>13/11/2025</td>
-                            <td class="acoes">
-                                <button  id="editar">✏️</button>
-                                <button  id="excluir">🗑️</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
+
+    <!-- MODAL -->
+    <div id="modalCadastro" class="modal">
+        <div class="modal-content">
+            <h2>Novo Relatório</h2>
+
+            <label>Inspetor:</label>
+            <input type="text" id="inspetor">
+
+            <label>Status:</label>
+            <select id="status">
+                <option value="Aprovado">Aprovado</option>
+                <option value="Reprovado">Reprovado</option>
+            </select>
+
+            <label>Data:</label>
+            <input type="date" id="dataRelatorio">
+
+            <button id="salvarRelatorio">Salvar</button>
+            <button id="fecharModal" class="fechar">Cancelar</button>
+        </div>
+    </div>
 </body>
 </html>
