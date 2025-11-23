@@ -1,0 +1,90 @@
+/* CONTAINER DO FORMULÁRIO */
+.container {
+    background: #fff;
+    width: 95%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.container h2 {
+    margin-bottom: 15px;
+}
+
+.container label {
+    font-weight: bold;
+}
+
+.container input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.btn.add {
+    background: #0077ff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn.add:hover {
+    background: #005fcc;
+}
+
+.btn.delete {
+    background: #ff4444;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn.delete:hover {
+    background: #d93636;
+}
+
+/* LISTA */
+.lista-container {
+    background: #fff;
+    width: 95%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+}
+
+.lista-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lista-botoes {
+    display: flex;
+    gap: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+table tr:hover td {
+    background: #f9f9f9;
+}
