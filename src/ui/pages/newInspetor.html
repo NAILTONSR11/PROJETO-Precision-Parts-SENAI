@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/src/ui/style/newInspetor.css">
 
     <!-- JS global -->
-    <script src="/src/ui/script/script.js" defer></script>
+    <script type="module" src="/src/ui/js/main.js" defer></script>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
         <div class="container">
             <h2>Cadastrar Novo Inspetor</h2>
 
-            <form id="formInspetor" onsubmit="cadastrarInspetor(event)">
+            <form id="formInspetor" >
                 <label for="nome">Nome*</label>
                 <input type="text" id="nome" required>
 
@@ -61,7 +61,7 @@
                 <label for="email">Email</label>
                 <input type="email" id="email">
 
-                <button type="submit" class="btn add">Cadastrar</button>
+                <button type="submit" id="add" class="btn add">Cadastrar</button>
             </form>
         </div>
 
@@ -72,7 +72,7 @@
                 <h2>Inspetores Cadastrados</h2>
 
                 <div class="lista-botoes">
-                    <button class="btn add" onclick="abrirFormulario()">+ Adicionar Inspetor</button>
+                    <button id="btnNovoInspetor" class="btn add" onclick="abrirFormulario()">+ Adicionar Inspetor</button>
                     <button class="btn delete" onclick="excluirSelecionados()">Excluir Selecionados</button>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             <table id="tabelaInspetores">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" onclick="selecionarTodos(this)"></th>
+                        <th><input id="checkTodos" type="checkbox" onclick="selecionarTodos(this)"></th>
                         <th>Nome</th>
                         <th>Setor</th>
                         <th>Email</th>
@@ -88,7 +88,7 @@
                 </thead>
 
                 <tbody id="listaInspetores">
-                    <!-- registros serão adicionados aqui dinamicamente -->
+
                 </tbody>
             </table>
         </div>
