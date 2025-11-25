@@ -1,11 +1,10 @@
 // -------- MENU RETRÁTIL --------
-    const menu = document.getElementById("menu_lateral");
-    const toggleMenu = document.getElementById("toggleMenu");
+const menu = document.getElementById("menu_lateral");
+const toggleMenu = document.getElementById("toggleMenu");
 
-    toggleMenu.addEventListener("click", () => {
-        menu.classList.toggle("mini");
-    });
-
+toggleMenu.addEventListener("click", () => {
+    menu.classList.toggle("mini");
+});
 
 // ======== modal ========
 const modal = document.getElementById("modalCadastro");

@@ -23,7 +23,7 @@ const ui = {
             await ui.cadastrarInspetor();
             
         } catch (error) {
-            alert("Erro ao renderizar instrutores")
+            alert(" ARQUIVO: UI Erro ao renderizar instrutores")
         }
     },
 
@@ -53,7 +53,7 @@ const ui = {
                 await ui.renderizarInspetor();
 
             } catch (error) {
-                alert("Erro ao cadastrar inspetor");
+                alert("  ARQUIVO: UI Erro ao cadastrar inspetor");
             } finally {
                 btnSalvar.innerText = "Cadastrar";
             }
