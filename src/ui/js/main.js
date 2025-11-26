@@ -1,40 +1,64 @@
 import api from "../js/api.js";
-import ui from "../js/ui.js"
+import ui from "../js/ui.js";
 
+document.addEventListener("DOMContentLoaded", () => {
 
-
-document.addEventListener('DOMContentLoaded', () => {
     ui.renderizarInspetor();
     ui.cadastrarInspetor();
-})
 
-// -------- MENU RETRÁTIL --------
-const menu = document.getElementById("menu_lateral");
-const toggleMenu = document.getElementById("toggleMenu");
+    /* --------------- menu retrátil ------------------ */
+    const menu = document.getElementById("menu_lateral");
+    const toggleMenu = document.getElementById("toggleMenu");
 
-toggleMenu.addEventListener("click", () => {
-    menu.classList.toggle("mini");
-});
+    toggleMenu?.addEventListener("click", () => {
+        menu.classList.toggle("ativo");
+    });
 
-// ======== modal ========
-const modal = document.getElementById("modalCadastro");
-const btnAbrir = document.getElementById("btnCadastrarRelatorio");
-const btnFechar = document.getElementById("fecharModal");
+    // fecha o menu mobile quando clicar fora
+    document.addEventListener("click", (event) => {
+        if (!menu.classList.contains("ativo")) return;
 
-// ======== abrir modal ========
-btnAbrir.addEventListener("click", () => {
-    modal.style.display = "flex";
-});
+        if (!menu.contains(event.target) && event.target !== toggleMenu) {
+            menu.classList.remove("ativo");
+        }
+    });
 
-// ======== fechar modal ========
-btnFechar.addEventListener("click", () => {
-    modal.style.display = "none";
-});
+    /* ----------- modal cadastrar relatorio -------------- */
+    const modal = document.getElementById("modalCadastro");
+    const btnAbrir = document.getElementById("btnCadastrarRelatorio");
+    const btnFechar = document.getElementById("fecharModal");
 
-// ======== fechar ao clicar fora ========
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
+    btnAbrir?.addEventListener("click", () => {
+        modal.style.display = "flex";
+    });
+
+    btnFechar?.addEventListener("click", () => {
         modal.style.display = "none";
-    }
-});
+    });
 
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    /* ------------ modal cadstrar inspetor ------------- */
+    const modalInspetor = document.getElementById("modalInspetor");
+    const btnNovoInspetor = document.getElementById("btnNovoInspetor");
+    const fecharInspetor = document.getElementById("fecharInspetor");
+
+    btnNovoInspetor?.addEventListener("click", () => {
+        modalInspetor.style.display = "flex";
+    });
+
+    fecharInspetor?.addEventListener("click", () => {
+        modalInspetor.style.display = "none";
+    });
+
+    window.addEventListener("click", (event) => {
+        if (event.target === modalInspetor) {
+            modalInspetor.style.display = "none";
+        }
+    });
+
+});
