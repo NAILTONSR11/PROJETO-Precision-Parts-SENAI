@@ -5,13 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ui.renderizarInspetor();
     ui.cadastrarInspetor();
+    ui.renderizarInspetorCadastro();
 
     /* --------------- menu retrátil ------------------ */
     const menu = document.getElementById("menu_lateral");
     const toggleMenu = document.getElementById("toggleMenu");
 
     toggleMenu?.addEventListener("click", () => {
-        menu.classList.toggle("ativo");
+        menu.classList.toggle("mini");
     });
 
     // fecha o menu mobile quando clicar fora
