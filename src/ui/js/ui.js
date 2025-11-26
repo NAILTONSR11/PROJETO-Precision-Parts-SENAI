@@ -20,10 +20,9 @@ const ui = {
                 `
                 lista.appendChild(tr)
             });
-            await ui.cadastrarInspetor();
             
         } catch (error) {
-            alert(" ARQUIVO: UI Erro ao renderizar instrutores")
+            console.error(" ARQUIVO: UI Erro ao renderizar instrutores")
         }
     },
 
@@ -58,6 +57,26 @@ const ui = {
                 btnSalvar.innerText = "Cadastrar";
             }
         });
+    },
+
+    async renderizarInspetorCadastro(){
+        try {
+            const inspetores = await api.buscarInspetores();
+            const listaEscolha = document.getElementById('Inspetor');
+            listaEscolha.innerHTML = "";
+
+            inspetores.forEach(inspetor =>{
+                listaEscolha.innerHTML += 
+                `
+                <option value="nome">${inspetor.nome}</option>
+                
+                `
+            })
+        } catch (error) {
+            console.error(" ARQUIVO: UI Erro ao renderizar instrutores na escolha")
+        }
+
     }
+
 }
 export default ui;

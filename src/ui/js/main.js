@@ -6,6 +6,7 @@ import ui from "../js/ui.js"
 document.addEventListener('DOMContentLoaded', () => {
     ui.renderizarInspetor();
     ui.cadastrarInspetor();
+    ui.renderizarInspetorCadastro();
 })
 
 // -------- MENU RETRÁTIL --------
@@ -37,4 +38,5 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
+
 
