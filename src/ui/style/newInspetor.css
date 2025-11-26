@@ -129,12 +129,11 @@ table tr:hover td {
     color: #d00000;
 }
 
-/* ======== menu mobile ======== */
+/* ======== menu mobile ======== */ 
 @media (max-width: 768px) {
 
    #menu_lateral {
         left: -230px;
-        transition: 0.3s;
         position: fixed;
         z-index: 999;
     }
