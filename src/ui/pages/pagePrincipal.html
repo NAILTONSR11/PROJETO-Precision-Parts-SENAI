@@ -126,30 +126,8 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td><img src="/src/ui/images/RELATO.png" alt=""></td>
-                            <td>Maria Oliveira</td>
-                            <td><span class="status aprovado">Aprovado</span></td>
-                            <td>—</td>
-                            <td>12/11/2025</td>
-                            <td class="acoes">
-                                <button>✏️</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <td><img src="/src/ui/images/RELATO.png" alt=""></td>
-                            <td>João Pereira</td>
-                            <td><span class="status reprovado">Reprovado</span></td>
-                            <td>Falha na dimensão</td>
-                            <td>12/11/2025</td>
-                            <td class="acoes">
-                                <button>✏️</button>
-                                <button>🗑️</button>
-                            </td>
-                        </tr>
-
+     
                     </tbody>
                 </table>
             </div>
@@ -158,26 +136,34 @@
 
     <!-- MODAL -->
     <div id="modalCadastro" class="modal">
-        <div class="modal-content">
-            <h2>Novo Relatório</h2>
+    <div class="modal-content">
+        <h2>Novo Relatório</h2>
 
-            <label>Inspetor:</label>
-            <select id="Inspetor">
+        <!-- Inspetor -->
+        <label>Inspetor:</label>
+        <select id="Inspetor">
+            <!-- opções carregadas dinamicamente -->
+        </select>
 
-            </select>
+        <!-- Status -->
+        <label>Status:</label>
+        <select id="status">
+            <option value="Aprovado">Aprovado</option>
+            <option value="Reprovado">Reprovado</option>
+        </select>
 
-            <label>Status:</label>
-            <select id="status">
-                <option value="Aprovado">Aprovado</option>
-                <option value="Reprovado">Reprovado</option>
-            </select>
+        <!-- Não Conformidade -->
+        <label>Não Conformidade:</label>
+        <input type="text" id="naoConformidade" placeholder="Descreva a não conformidade" required>
 
-            <label>Data:</label>
-            <input type="date" id="dataRelatorio">
+        <!-- Data -->
+        <label>Data:</label>
+        <input type="date" id="dataRelatorio">
 
-            <button id="salvarRelatorio">Salvar</button>
-            <button id="fecharModal" class="fechar">Cancelar</button>
-        </div>
+        <!-- Botões -->
+        <button id="salvarRelatorio">Salvar</button>
+        <button id="fecharModal" class="fechar">Cancelar</button>
     </div>
+</div>
 </body>
 </html>

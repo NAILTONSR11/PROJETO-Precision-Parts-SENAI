@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.renderizarInspetor();
     ui.cadastrarInspetor();
     ui.renderizarInspetorCadastro();
+    ui.cadastrarRelatorio();
+    ui.renderizarRelatorios();
 
     /* --------------- menu retrátil ------------------ */
     const menu = document.getElementById("menu_lateral");
