@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleMenu = document.getElementById("toggleMenu");
 
     toggleMenu?.addEventListener("click", () => {
-        menu.classList.toggle("mini");
+        menu.classList.toggle("ativo");
     });
 
     // fecha o menu mobile quando clicar fora
@@ -63,5 +63,4 @@ document.addEventListener("DOMContentLoaded", () => {
             modalInspetor.style.display = "none";
         }
     });
-
 });

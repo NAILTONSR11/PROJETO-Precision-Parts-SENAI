@@ -109,3 +109,51 @@ body {
 .card button:hover {
     background: #1e40af;
 }
+
+/* ======== menu mobile ======== */
+@media (max-width: 768px) {
+
+    #menu_lateral {
+         left: -230px;
+         transition: 0.3s;
+         position: fixed;
+         z-index: 999;
+     }
+ 
+     #menu_lateral.ativo {
+         left: 0;
+     }
+ 
+     header {
+         padding-left: 20px;
+         justify-content: space-between;
+     }
+ 
+     #toggleMenu {
+         width: 32px;
+     }
+ 
+     main {
+         margin-left: 0;
+         padding: 20px;
+     }
+ 
+     .cards {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+ 
+ @media (max-width: 500px) {
+ 
+     .cards {
+         grid-template-columns: 1fr;
+     }
+ 
+     .LOGO-TT h2 {
+         font-size: 12px;
+     }
+ 
+     .LOGO-TT p {
+         font-size: 10px;
+     }
+ }
