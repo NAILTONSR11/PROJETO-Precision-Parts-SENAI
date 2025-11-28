@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, "ui")));
 
 // rota para a página inicial
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "ui", "index.html"));
+  res.sendFile(path.join(__dirname, "ui", "pages", "pagePrincipal.html"));
 });
 
 connectDB();
