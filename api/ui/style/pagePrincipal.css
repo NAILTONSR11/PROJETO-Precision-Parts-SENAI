@@ -385,6 +385,51 @@ main {
     color: var(--cinza-escuro);
 }
 
+/* ====================== MENU MOBILE ====================== */
+@media (max-width: 768px) {
+
+    /* menu escondido */
+    #menu_lateral {
+        left: -240px;
+        top: 0;
+        transition: 0.3s ease;
+        width: 220px;
+        position: fixed;
+        z-index: 999;
+    }
+
+    
+    #menu_lateral.ativo {
+        left: 0;
+    }
+
+    
+    header {
+        padding-left: 0 !important;
+        padding-right: 12px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    #toggleMenu {
+        width: 30px;
+        cursor: pointer;
+        margin-left: 14px;
+    }
+
+    
+    .LOGO-TT {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    
+    main {
+        margin-left: 0 !important;
+        padding: 14px;
+    }
+}
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
