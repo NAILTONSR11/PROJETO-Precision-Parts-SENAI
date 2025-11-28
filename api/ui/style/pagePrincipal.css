@@ -395,7 +395,7 @@ main {
         transition: 0.3s ease;
         width: 220px;
         position: fixed;
-        z-index: 999;
+        z-index: 1;
     }
 
     
@@ -452,4 +452,5 @@ main {
         overflow-x: auto;
         white-space: nowrap;
 }
+
 }
