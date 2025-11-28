@@ -7,6 +7,12 @@ import relatorioRoute from "./routes/relatorioRoutes.js";
 import path from "path";
 import { fileURLToPath } from "url";
 
+dotenv.config();
+
+const app = express(); // crie o app logo no início
+app.use(cors());
+app.use(express.json());
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -18,22 +24,15 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "ui", "index.html"));
 });
 
-dotenv.config();
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
 connectDB();
 
-app.use('/inspetor', inspetorRoute);
+app.use("/inspetor", inspetorRoute);
 app.use("/relatorio", relatorioRoute);
 app.get("/teste", (req, res) => {
   res.send("rota funcionando!");
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () =>{
-  console.log(`Servidor rodando da porta ${PORT}, 
-    http://localhost:${PORT}` )
-})
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}, http://localhost:${PORT}`);
+});
