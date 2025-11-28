@@ -128,6 +128,14 @@ main {
     padding: 28px;
 }
 
+.corpo_mini{
+    margin-left: 5vw;
+}
+
+.header_mini{
+    padding-left: 5vw;
+}
+
 #primeiraParte h1 {
     font-size: 22px;
     margin-bottom: 4px;

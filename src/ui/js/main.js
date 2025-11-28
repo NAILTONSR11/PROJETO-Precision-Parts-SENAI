@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ui.renderizarInspetor();
   ui.renderizarInspetorCadastro();
   ui.renderizarRelatorios();
-
+  ui.entrarEdicaoInline();
   ui.cadastrarInspetor();
   ui.cadastrarRelatorio();
 
@@ -16,10 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* --------------- menu retrátil ------------------ */
     const menu = document.getElementById("menu_lateral");
+    const page = document.getElementById("corpo");
+    const topo = document.getElementById("header");
     const toggleMenu = document.getElementById("toggleMenu");
 
     toggleMenu?.addEventListener("click", () => {
         menu.classList.toggle("mini");
+        page.classList.toggle("corpo_mini");
+        topo.classList.toggle("header_mini")
     });
 
     // fecha o menu mobile quando clicar fora

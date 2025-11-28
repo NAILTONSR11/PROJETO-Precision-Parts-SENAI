@@ -117,7 +117,37 @@ const api = {
             console.error("API - Erro ao Deletar Relatório!", error);
             throw error;
         }
+    },
+
+async atualizarRelatorio(id, dadosAtualizados) {
+    try {
+        const res = await fetch(`http://localhost:3000/relatorio/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dadosAtualizados)
+        });
+
+        // Tenta ler JSON, mas sem quebrar caso não tenha corpo
+        let json = {};
+        try {
+            json = await res.json();
+        } catch (_) {
+            json = {}; // evita erro de "Unexpected end of JSON input"
+        }
+
+        if (!res.ok) {
+            throw new Error(json.error || `Erro ao atualizar relatório (${res.status})`);
+        }
+
+        return json; // retorno seguro
+
+    } catch (error) {
+        console.error("API - Erro ao atualizar Relatório!", error);
+        throw error;
     }
+}
+
 };
+
 
 export default api;

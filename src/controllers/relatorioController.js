@@ -46,3 +46,33 @@ export const deletarRelatorio = async (req, res) => {
         return res.status(500).json({ error: "Erro interno ao deletar relatório" });
     }
 };
+
+// Atualizar relatório
+export const atualizarRelatorio = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const dadosAtualizados = req.body;
+
+        // Verifica se o relatório existe
+        const relatorioExistente = await Relatorio.findById(id);
+        if (!relatorioExistente) {
+            return res.status(404).json({ error: "Relatório não encontrado" });
+        }
+
+        // Atualiza o relatório
+        const relatorioAtualizado = await Relatorio.findByIdAndUpdate(
+            id,
+            dadosAtualizados,
+            { new: true, runValidators: true }
+        ).populate("inspetor");
+
+        return res.status(200).json({
+            message: "Relatório atualizado com sucesso",
+            relatorio: relatorioAtualizado
+        });
+
+    } catch (error) {
+        console.error("Erro ao atualizar relatório:", error);
+        return res.status(500).json({ error: "Erro interno ao atualizar relatório" });
+    }
+};
