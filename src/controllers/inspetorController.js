@@ -27,3 +27,23 @@ export const listarInspetores = async (req, res)=>{
         res.status(500).json({error: "Erro ao listar Inspetores"})
     }
 };
+
+export const deletarInspetor = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        // Tenta remover pelo ID
+        const excluido = await Inspetor.findByIdAndDelete(id);
+
+        // Se não encontrou
+        if (!excluido) {
+            return res.status(404).json({ error: "Inspetor não encontrado" });
+        }
+
+        return res.status(200).json({ message: "Inspetor deletado com sucesso" });
+
+    } catch (error) {
+        console.error("Erro ao deletar inspetor:", error);
+        return res.status(500).json({ error: "Erro interno ao deletar inspetor" });
+    }
+}

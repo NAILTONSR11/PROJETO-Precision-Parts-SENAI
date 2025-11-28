@@ -2,19 +2,24 @@ import api from "../js/api.js";
 import ui from "../js/ui.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  ui.renderizarInspetor();
+  ui.renderizarInspetorCadastro();
+  ui.renderizarRelatorios();
 
-    ui.renderizarInspetor();
-    ui.cadastrarInspetor();
-    ui.renderizarInspetorCadastro();
-    ui.cadastrarRelatorio();
-    ui.renderizarRelatorios();
+  ui.cadastrarInspetor();
+  ui.cadastrarRelatorio();
+
+  // Botão excluir selecionados
+  document
+    .querySelector(".btn.delete")
+    ?.addEventListener("click", () => ui.deletarInspetores());
 
     /* --------------- menu retrátil ------------------ */
     const menu = document.getElementById("menu_lateral");
     const toggleMenu = document.getElementById("toggleMenu");
 
     toggleMenu?.addEventListener("click", () => {
-        menu.classList.toggle("ativo");
+        menu.classList.toggle("mini");
     });
 
     // fecha o menu mobile quando clicar fora
@@ -63,4 +68,5 @@ document.addEventListener("DOMContentLoaded", () => {
             modalInspetor.style.display = "none";
         }
     });
+
 });

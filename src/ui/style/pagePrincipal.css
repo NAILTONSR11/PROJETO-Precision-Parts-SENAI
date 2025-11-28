@@ -285,11 +285,6 @@ main {
     color: var(--status-reprovado-text);
 }
 
-/* =========== AÇÔES =============== */
-.acoes img {
-    background-color: #FFFFFF;;
-}
-
 /* ===== MENU ENCOLHIDO ===== */
 
 #menu_lateral.mini {
@@ -383,76 +378,25 @@ main {
 }
 
 
-/* ======== menu mobile ======== */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
 
-    #menu_lateral {
-         left: -230px;
-         transition: 0.3s;
-         position: fixed;
-         z-index: 999;
-     }
- 
-     #menu_lateral.ativo {
-         left: 0;
-     }
- 
-     header {
-         padding-left: 20px;
-         justify-content: space-between;
-     }
- 
-     #toggleMenu {
-         width: 32px;
-     }
- 
-     main {
-         margin-left: 0;
-         padding: 20px;
-     }
- 
-     .cards {
-         grid-template-columns: repeat(2, 1fr);
-     }
- }
- 
- @media (max-width: 500px) {
- 
-     .cards {
-         grid-template-columns: 1fr;
-     }
- 
-     .LOGO-TT h2 {
-         font-size: 12px;
-     }
- 
-     .LOGO-TT p {
-         font-size: 10px;
-     }
- }
- 
- /* RESPONSIVIDADE */
- @media (max-width: 768px) {
- 
-     main {
-         margin-left: 5vw;
-         padding: 14px;
-     }
- 
-     .cards {
-         grid-template-columns: repeat(2, 1fr);
-     }
- 
-     header {
-         padding-left: 90px;
-     }
- 
-     .tabelaRelatorios {
-         display: block;
-         overflow-x: auto;
-         white-space: nowrap;
- }
-     .modal{
-         z-index: 999;
- }
- }
+    main {
+        margin-left: 5vw;
+        padding: 14px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        padding-left: 90px;
+    }
+
+    .tabelaRelatorios {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+}
+}

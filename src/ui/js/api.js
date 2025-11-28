@@ -1,11 +1,12 @@
 /* const API_URL = "http://localhost:3000/inspetor";  */
+
 const api = {
 
     // ==============================
     // ===      INSPETORES       ===
     // ==============================
 
-    // Cadastrar novo inspetor
+    // Criar inspetor
     async criarInspetor(dados) {
         try {
             const res = await fetch("http://localhost:3000/inspetor", {
@@ -13,20 +14,30 @@ const api = {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dados)
             });
+
+            if (!res.ok) {
+                throw new Error(`Erro ao criar inspetor: ${res.status}`);
+            }
+
             return await res.json();
         } catch (error) {
-            console.log("ARQUIVO: API - Erro ao salvar Inspetor!");
+            console.error("API - Erro ao salvar Inspetor!", error);
             throw error;
         }
     },
 
-    // Buscar todos os inspetores
+    // Buscar inspetores
     async buscarInspetores() {
         try {
             const res = await fetch("http://localhost:3000/inspetor");
+
+            if (!res.ok) {
+                throw new Error(`Erro ao buscar inspetores: ${res.status}`);
+            }
+
             return await res.json();
         } catch (error) {
-            console.log("ARQUIVO: API - Erro ao mostrar Inspetores!");
+            console.error("API - Erro ao listar Inspetores!", error);
             throw error;
         }
     },
@@ -34,12 +45,17 @@ const api = {
     // Deletar inspetor
     async deletarInspetor(id) {
         try {
-            const response = await fetch(`http://localhost:3000/inspetor/${id}`, {
+            const res = await fetch(`http://localhost:3000/inspetor/${id}`, {
                 method: "DELETE"
             });
-            return await response.json();
+
+            if (!res.ok) {
+                throw new Error(`Erro ao deletar inspetor: ${res.status}`);
+            }
+
+            return await res.json();
         } catch (error) {
-            console.log("Erro ao Deletar Inspetor!");
+            console.error("API - Erro ao Deletar Inspetor!", error);
             throw error;
         }
     },
@@ -48,7 +64,8 @@ const api = {
     // ==============================
     // ===       RELATÓRIOS      ===
     // ==============================
-// Criar relatório
+
+    // Criar relatório
     async criarRelatorio(dados) {
         try {
             const res = await fetch("http://localhost:3000/relatorio", {
@@ -58,7 +75,7 @@ const api = {
             });
 
             if (!res.ok) {
-                throw new Error(`API -Erro ao criar relatório: ${res.status}`);
+                throw new Error(`Erro ao criar relatório: ${res.status}`);
             }
 
             return await res.json();
@@ -68,7 +85,7 @@ const api = {
         }
     },
 
-    // Buscar todos os relatórios
+    // Buscar relatórios
     async buscarRelatorios() {
         try {
             const res = await fetch("http://localhost:3000/relatorio");
@@ -102,6 +119,5 @@ const api = {
         }
     }
 };
-
 
 export default api;
