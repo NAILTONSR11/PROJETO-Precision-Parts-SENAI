@@ -238,4 +238,7 @@ table tr:hover td {
             width: 95%;
         }
     }
+    .insp_email{
+        display: none;
+    }
 }

@@ -40,7 +40,7 @@ const ui = {
           <td><input type="checkbox" class="checkInspetor" data-id="${insp._id}"></td>
           <td>${insp.nome}</td>
           <td>${insp.setor}</td>
-          <td>${insp.email}</td>
+          <td class = "insp_email">${insp.email}</td>
         `;
         lista.appendChild(tr);
       });
@@ -163,7 +163,7 @@ const ui = {
 
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td>
+        <td class = "arquivo">
           <input type="file" class="input-arquivo" style="
             width: 80px;
             height: 30px;
