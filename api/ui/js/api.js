@@ -9,7 +9,7 @@ const api = {
     // Criar inspetor
     async criarInspetor(dados) {
         try {
-            const res = await fetch("http://localhost:3000/inspetor", {
+            const res = await fetch("/inspetor", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dados)
@@ -29,7 +29,7 @@ const api = {
     // Buscar inspetores
     async buscarInspetores() {
         try {
-            const res = await fetch("http://localhost:3000/inspetor");
+            const res = await fetch("/inspetor");
 
             if (!res.ok) {
                 throw new Error(`Erro ao buscar inspetores: ${res.status}`);
@@ -45,7 +45,7 @@ const api = {
     // Deletar inspetor
     async deletarInspetor(id) {
         try {
-            const res = await fetch(`http://localhost:3000/inspetor/${id}`, {
+            const res = await fetch(`/inspetor/${id}`, {
                 method: "DELETE"
             });
 
@@ -68,7 +68,7 @@ const api = {
     // Criar relatório
     async criarRelatorio(dados) {
         try {
-            const res = await fetch("http://localhost:3000/relatorio", {
+            const res = await fetch("/relatorio", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(dados)
@@ -88,7 +88,7 @@ const api = {
     // Buscar relatórios
     async buscarRelatorios() {
         try {
-            const res = await fetch("http://localhost:3000/relatorio");
+            const res = await fetch("/relatorio");
 
             if (!res.ok) {
                 throw new Error(`Erro ao buscar relatórios: ${res.status}`);
@@ -104,7 +104,7 @@ const api = {
     // Deletar relatório
     async deletarRelatorio(id) {
         try {
-            const res = await fetch(`http://localhost:3000/relatorio/${id}`, {
+            const res = await fetch(`/relatorio/${id}`, {
                 method: "DELETE"
             });
 
@@ -121,7 +121,7 @@ const api = {
 
 async atualizarRelatorio(id, dadosAtualizados) {
     try {
-        const res = await fetch(`http://localhost:3000/relatorio/${id}`, {
+        const res = await fetch(`/relatorio/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dadosAtualizados)
